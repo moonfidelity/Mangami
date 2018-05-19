@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+
+    <item
+        android:id="@+id/navigation_home"
+
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_booklist"
+        android:icon="@drawable/ic_book_black_24dp"
+        android:title="@string/title_booklist" />
+
+    <item
+        android:id="@+id/navigation_recent"
+        android:icon="@drawable/ic_access_time_black_24dp"
+        android:title="@string/title_recent" />
+
+    <item
+        android:id="@+id/navigation_downloads"
+        android:icon="@drawable/ic_file_download_black_24dp"
+        android:title="@string/title_downloads" />
+
+
+</menu>

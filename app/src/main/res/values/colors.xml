@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- PrimaryColors -->
+    <color name="colorPrimary">#123d53</color>
+    <color name="colorPrimaryDark">#0a2736</color>
+    <color name="colorPrimaryDark2">#001a26</color>
+    <color name="colorAccent">#ffd180</color>
+
+
+    <!-- BottomNavigationView Colors -->
+    <color name="colorUnselected">#4d879f</color>
+    <color name="colorSelected">#ffffff</color>
+
+
+    <!-- Else -->
+    <color name="colorWhite">#ffffff</color>
+
+
+</resources>
