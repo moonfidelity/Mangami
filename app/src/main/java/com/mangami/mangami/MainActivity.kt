@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 addFragment(fragment)
 
 
-                toolbar_main.setTitle("Home")
+//                toolbar_main.setTitle("Home")
 
 
 
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 addFragment(fragment)
 
 
-                toolbar_main.setTitle("Booklist")
+//                toolbar_main.setTitle("Booklist")
 
 
                 return@OnNavigationItemSelectedListener true
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 addFragment(fragment)
 
 
-                toolbar_main.setTitle("Recent")
+//                toolbar_main.setTitle("Recent")
 
 
                 return@OnNavigationItemSelectedListener true
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 addFragment(fragment)
 
 
-                toolbar_main.setTitle("Downloads")
+//                toolbar_main.setTitle("Downloads")
 
 
                 return@OnNavigationItemSelectedListener true
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
 
 
 //        ActionBarSupport
-        setSupportActionBar(findViewById(R.id.toolbar_main))
+//        setSupportActionBar(findViewById(R.id.toolbar_main))
 
 
 
@@ -136,36 +136,36 @@ class MainActivity : AppCompatActivity() {
 //    ACTION BAR
 //
 
-//    This adds items to the ActionBar
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-        return true
-    }
-
-
-//    This is the OnClickListener for the Buttons in the ActionBar
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-    R.id.toolbar_edit -> {
-
-
-        true
-    }
-
-    R.id.toolbar_search -> {
-
-
-        true
-    }
-
-    else -> {
-        // If we got here, the user's action was not recognized.
-        // Invoke the superclass to handle it.
-        super.onOptionsItemSelected(item)
-    }
-}
+////    This adds items to the ActionBar
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+//        return true
+//    }
 //
-//    ACTION BAR CLOSED
 //
+////    This is the OnClickListener for the Buttons in the ActionBar
+//    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+//    R.id.toolbar_edit -> {
+//
+//
+//        true
+//    }
+//
+//    R.id.toolbar_search -> {
+//
+//
+//        true
+//    }
+//
+//    else -> {
+//        // If we got here, the user's action was not recognized.
+//        // Invoke the superclass to handle it.
+//        super.onOptionsItemSelected(item)
+//    }
+//}
+////
+////    ACTION BAR CLOSED
+////
 
 
 

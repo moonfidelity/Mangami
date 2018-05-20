@@ -11,7 +11,7 @@ class HomeFragmentNew : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView = inflater!!.inflate(R.layout.fragment_home_fragment_new, container, false)
+        var rootView = inflater.inflate(R.layout.fragment_home_fragment_new, container, false)
         return rootView
 
     }
