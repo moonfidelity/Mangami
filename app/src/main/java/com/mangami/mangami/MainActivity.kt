@@ -5,15 +5,12 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v4.app.Fragment
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.FrameLayout
 
 import fragment.HomeFragment
 import fragment.FragmentBooklist
 import fragment.FragmentRecent
 import fragment.FragmentDownloads
-import kotlinx.android.synthetic.main.toolbar_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,8 +36,6 @@ class MainActivity : AppCompatActivity() {
                 addFragment(fragment)
 
 
-//                toolbar_main.setTitle("Home")
-
 
 
                 return@OnNavigationItemSelectedListener true
@@ -52,8 +47,6 @@ class MainActivity : AppCompatActivity() {
                 addFragment(fragment)
 
 
-//                toolbar_main.setTitle("Booklist")
-
 
                 return@OnNavigationItemSelectedListener true
             }
@@ -63,8 +56,6 @@ class MainActivity : AppCompatActivity() {
                 addFragment(fragment)
 
 
-//                toolbar_main.setTitle("Recent")
-
 
                 return@OnNavigationItemSelectedListener true
             }
@@ -73,8 +64,6 @@ class MainActivity : AppCompatActivity() {
                 val fragment = FragmentDownloads.Companion.newInstance()
                 addFragment(fragment)
 
-
-//                toolbar_main.setTitle("Downloads")
 
 
                 return@OnNavigationItemSelectedListener true
@@ -135,7 +124,7 @@ class MainActivity : AppCompatActivity() {
 //
 //    ACTION BAR
 //
-
+//
 ////    This adds items to the ActionBar
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        menuInflater.inflate(R.menu.menu_toolbar_main, menu)

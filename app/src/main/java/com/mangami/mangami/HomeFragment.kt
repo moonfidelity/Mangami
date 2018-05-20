@@ -8,15 +8,18 @@ import android.view.ViewGroup
 import com.mangami.mangami.*
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
+import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.toolbar_main.*
+import android.view.Menu
+import android.view.MenuItem
+import android.view.MenuInflater
+import com.mangami.mangami.R.menu.menu_toolbar_main
 
 
 class HomeFragment : Fragment() {
 
     private lateinit var tabLayout: TabLayout
     private lateinit var firstViewPager: ViewPager
-
-
-
 
 
     /**
@@ -35,6 +38,8 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setHasOptionsMenu(true)
+        (activity as AppCompatActivity).supportActionBar
 
 
     }
@@ -51,9 +56,8 @@ class HomeFragment : Fragment() {
         tabLayout.setupWithViewPager(firstViewPager)
 
         setupViewPager(firstViewPager)
+
         return rootView
-
-
     }
 
 
@@ -65,4 +69,42 @@ class HomeFragment : Fragment() {
         viewPager.adapter = adapter
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+
+        inflater?.inflate(R.menu.menu_toolbar_main, menu)
+    }
+
+//    //    This adds items to the ActionBar
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//
+//        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+//        return true
+//
+//    }
+//
+//
+
+    //    This is the OnClickListener for the Buttons in the ActionBar
+    override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {
+        R.id.toolbar_edit -> {
+
+
+            true
+        }
+
+        R.id.toolbar_search -> {
+
+
+            true
+        }
+
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
+
+    }
 }
