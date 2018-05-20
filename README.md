@@ -1,0 +1,2 @@
+# Mangami
+Manga Reader App.
