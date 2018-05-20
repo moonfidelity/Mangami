@@ -10,19 +10,6 @@ import android.view.View
 class HomeFragmentNew : Fragment() {
 
 
-
-
-    companion object {
-        fun newInstance(): HomeFragmentNew {
-            var fragmentHome = HomeFragmentNew()
-            var args = Bundle()
-            fragmentHome.arguments = args
-            return fragmentHome
-        }
-
-    }
-
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var rootView = inflater!!.inflate(R.layout.fragment_home_fragment_new, container, false)
         return rootView

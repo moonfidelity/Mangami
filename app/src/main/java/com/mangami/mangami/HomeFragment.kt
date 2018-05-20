@@ -12,8 +12,10 @@ import android.support.v4.view.ViewPager
 
 class HomeFragment : Fragment() {
 
-    private val tabLayout: TabLayout? = null
-    private val firstViewPager: ViewPager? = null
+    private lateinit var tabLayout: TabLayout
+    private lateinit var firstViewPager: ViewPager
+
+
 
 
 
