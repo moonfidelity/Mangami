@@ -2,18 +2,23 @@ package com.mangami.mangami
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.NavigationView
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v4.app.Fragment
+import android.support.v4.view.GravityCompat
+import android.support.v7.app.ActionBarDrawerToggle
+import android.view.MenuItem
 import android.widget.FrameLayout
 
 import fragment.HomeFragment
 import fragment.FragmentBooklist
 import fragment.FragmentRecent
 import fragment.FragmentDownloads
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private var content: FrameLayout? = null
 
@@ -115,8 +120,17 @@ class MainActivity : AppCompatActivity() {
 
 
 //        ActionBarSupport
-//        setSupportActionBar(findViewById(R.id.toolbar_main))
+        setSupportActionBar(findViewById(R.id.home_toolbar))
 
+
+
+
+        val toggle = ActionBarDrawerToggle(
+                this, drawer_layout, home_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        nav_view.setNavigationItemSelectedListener(this)
 
 
     }
@@ -155,6 +169,47 @@ class MainActivity : AppCompatActivity() {
 ////
 ////    ACTION BAR CLOSED
 ////
+
+
+
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        when (item.itemId) {
+            R.id.nav_camera -> {
+                // Handle the camera action
+            }
+            R.id.nav_gallery -> {
+
+            }
+            R.id.nav_slideshow -> {
+
+            }
+            R.id.nav_manage -> {
+
+            }
+            R.id.nav_share -> {
+
+            }
+            R.id.nav_send -> {
+
+            }
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+
+
 
 
 

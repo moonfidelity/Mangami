@@ -24,15 +24,42 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="For You"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="90sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Because you read"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="90sp" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Because you read"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="90sp" />
+
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+
 
                 <TextView
                     android:id="@+id/textView6"
@@ -43,15 +70,7 @@
                     android:textSize="90sp" />
 
                 <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="90sp" />
-
-                <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/test"
@@ -67,12 +86,29 @@
                     android:textSize="90sp" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/test"
                     android:textColor="@color/colorWhite"
                     android:textSize="90sp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For You"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="90sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="90sp" />
+
 
             </LinearLayout>
 
