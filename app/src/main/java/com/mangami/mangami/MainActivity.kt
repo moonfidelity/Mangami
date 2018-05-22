@@ -134,40 +134,40 @@ class MainActivity : AppCompatActivity(){
 
     }
 
+////
+////    ACTION BAR
+////
 //
-//    ACTION BAR
+////    This adds items to the ActionBar
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+//        return true
+//    }
 //
-
-//    This adds items to the ActionBar
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-        return true
-    }
-
-
-//    This is the OnClickListener for the Buttons in the ActionBar
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-    R.id.toolbar_edit -> {
-
-
-        true
-    }
-
-    R.id.toolbar_search -> {
-
-
-        true
-    }
-
-    else -> {
-        // If we got here, the user's action was not recognized.
-        // Invoke the superclass to handle it.
-        super.onOptionsItemSelected(item)
-    }
-}
 //
-//    ACTION BAR CLOSED
+////    This is the OnClickListener for the Buttons in the ActionBar
+//    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+//    R.id.toolbar_edit -> {
 //
+//
+//        true
+//    }
+//
+//    R.id.toolbar_search -> {
+//
+//
+//        true
+//    }
+//
+//    else -> {
+//        // If we got here, the user's action was not recognized.
+//        // Invoke the superclass to handle it.
+//        super.onOptionsItemSelected(item)
+//    }
+//}
+////
+////    ACTION BAR CLOSED
+////
 
 
 

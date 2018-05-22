@@ -15,16 +15,7 @@
 
 
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer"
 
-        />
 
 
     <android.support.constraint.ConstraintLayout
@@ -39,6 +30,7 @@
             android:elevation="4dp"
             android:fitsSystemWindows="true"
 
+            app:layout_scrollFlags="scroll|snap"
             app:title="@string/title_home"
             app:titleTextColor="@color/colorWhite"
 
@@ -83,7 +75,16 @@
 
     </android.support.constraint.ConstraintLayout>
 
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer"
 
+        />
 
 </android.support.v4.widget.DrawerLayout>
 

@@ -5,34 +5,54 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_manage_account"
             android:icon="@drawable/ic_edit_white_24dp"
-            android:title="Import" />
+            android:title="Manage Account" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_edit_white_24dp"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_edit_white_24dp"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_edit_white_24dp"
-            android:title="Tools" />
+            android:id="@+id/nav_backup_restore"
+            android:icon="@drawable/ic_backup_black_24dp"
+            android:title="Backup or Restore" />
+
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Mode">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_edit_white_24dp"
-                android:title="Share" />
+                android:id="@+id/nav_anime"
+                android:icon="@drawable/ic_anime_black_24dp"
+                android:title="Anime" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_edit_white_24dp"
-                android:title="Send" />
+                android:id="@+id/nav_manga"
+                android:icon="@drawable/ic_manga_black_24dp"
+                android:title="Manga" />
+            <item
+                android:id="@+id/nav_artworks"
+                android:icon="@drawable/ic_artworks_black_24dp"
+                android:title="Artworks" />
         </menu>
     </item>
+
+
+    <item android:title="General">
+        <menu>
+            <item
+                android:id="@+id/nav_whats_new"
+                android:icon="@drawable/ic_whats_new_black_24dp"
+                android:title="What's New" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_feedback_black_24dp"
+                android:title="Give us Feedback" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about_us__cake_black_24dp"
+                android:title="About us" />
+
+        </menu>
+    </item>
+
+
+
 
 </menu>
