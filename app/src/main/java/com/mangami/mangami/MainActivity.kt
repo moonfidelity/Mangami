@@ -18,9 +18,10 @@ import fragment.FragmentDownloads
 import kotlinx.android.synthetic.main.fragment_home.*
 import android.support.annotation.IdRes
 import android.support.v4.widget.DrawerLayout
+import android.view.Menu
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(){
 
     private var content: FrameLayout? = null
 
@@ -125,9 +126,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 //        SetActionBarSupport DOES NOT WORK IN FRAGMENTS??!?!?!
-//        setSupportActionBar(findViewById(R.id.toolbar_test))
+        setSupportActionBar(findViewById(R.id.toolbar_main))
 
         mDrawerLayout = findViewById(R.id.drawer_layout)
+
 
 
     }
@@ -135,43 +137,43 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //
 //    ACTION BAR
 //
+
+//    This adds items to the ActionBar
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+        return true
+    }
+
+
+//    This is the OnClickListener for the Buttons in the ActionBar
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+    R.id.toolbar_edit -> {
+
+
+        true
+    }
+
+    R.id.toolbar_search -> {
+
+
+        true
+    }
+
+    else -> {
+        // If we got here, the user's action was not recognized.
+        // Invoke the superclass to handle it.
+        super.onOptionsItemSelected(item)
+    }
+}
 //
-////    This adds items to the ActionBar
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-//        return true
-//    }
+//    ACTION BAR CLOSED
 //
-//
-////    This is the OnClickListener for the Buttons in the ActionBar
-//    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-//    R.id.toolbar_edit -> {
-//
-//
-//        true
-//    }
-//
-//    R.id.toolbar_search -> {
-//
-//
-//        true
-//    }
-//
-//    else -> {
-//        // If we got here, the user's action was not recognized.
-//        // Invoke the superclass to handle it.
-//        super.onOptionsItemSelected(item)
-//    }
-//}
-////
-////    ACTION BAR CLOSED
-////
 
 
 
 
 //    val toggle = ActionBarDrawerToggle(
-//            this, drawer_layout, home_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+//            this, drawer_layout, toolbar_main, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
 //    drawer_layout.addDrawerListener(toggle)
 //    toggle.syncState()
 //
@@ -187,32 +189,43 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
-            }
-            R.id.nav_gallery -> {
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//        // Handle navigation view item clicks here.
+//        when (item.itemId) {
+//            R.id.nav_camera -> {
+//                // Handle the camera action
+//            }
+//            R.id.nav_gallery -> {
+//
+//            }
+//            R.id.nav_slideshow -> {
+//
+//            }
+//            R.id.nav_manage -> {
+//
+//            }
+//            R.id.nav_share -> {
+//
+//            }
+//            R.id.nav_send -> {
+//
+//            }
+//        }
+//
+//        drawer_layout.closeDrawer(GravityCompat.START)
+//        return true
+//    }
 
-            }
-            R.id.nav_slideshow -> {
 
-            }
-            R.id.nav_manage -> {
 
-            }
-            R.id.nav_share -> {
 
-            }
-            R.id.nav_send -> {
 
-            }
-        }
 
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return true
-    }
+
+
+
+
+
 
 
 
