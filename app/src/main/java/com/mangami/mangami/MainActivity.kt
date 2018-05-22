@@ -16,11 +16,15 @@ import fragment.FragmentBooklist
 import fragment.FragmentRecent
 import fragment.FragmentDownloads
 import kotlinx.android.synthetic.main.fragment_home.*
+import android.support.annotation.IdRes
+import android.support.v4.widget.DrawerLayout
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private var content: FrameLayout? = null
+
+    private lateinit var mDrawerLayout: DrawerLayout
 
 
 //    BOTTOM NAVIGATION VIEW
@@ -80,6 +84,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
+
 //    The method to add, animate and change between Fragments:
 
     private fun addFragment(fragment: Fragment) {
@@ -119,18 +124,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
-//        ActionBarSupport
-        setSupportActionBar(findViewById(R.id.home_toolbar))
+//        SetActionBarSupport DOES NOT WORK IN FRAGMENTS??!?!?!
+//        setSupportActionBar(findViewById(R.id.toolbar_test))
 
-
-
-
-        val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, home_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        nav_view.setNavigationItemSelectedListener(this)
+        mDrawerLayout = findViewById(R.id.drawer_layout)
 
 
     }
@@ -170,6 +167,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 ////    ACTION BAR CLOSED
 ////
 
+
+
+
+//    val toggle = ActionBarDrawerToggle(
+//            this, drawer_layout, home_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+//    drawer_layout.addDrawerListener(toggle)
+//    toggle.syncState()
+//
+//    nav_view.setNavigationItemSelectedListener(this)
 
 
     override fun onBackPressed() {
@@ -216,4 +222,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
+
+
+
+
 }
+
