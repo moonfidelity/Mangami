@@ -8,12 +8,15 @@ import android.view.ViewGroup
 import com.mangami.mangami.*
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
+import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.toolbar_main.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MenuInflater
 import com.mangami.mangami.R.menu.menu_toolbar_main
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment() {
@@ -40,6 +43,8 @@ class HomeFragment : Fragment() {
 
         setHasOptionsMenu(true)
         (activity as AppCompatActivity).supportActionBar
+
+
 
 
     }
@@ -76,15 +81,6 @@ class HomeFragment : Fragment() {
         inflater?.inflate(R.menu.menu_toolbar_main, menu)
     }
 
-//    //    This adds items to the ActionBar
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//
-//        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-//        return true
-//
-//    }
-//
-//
 
     //    This is the OnClickListener for the Buttons in the ActionBar
     override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {

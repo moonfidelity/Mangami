@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import android.widget.FrameLayout
 
@@ -15,13 +14,12 @@ import fragment.HomeFragment
 import fragment.FragmentBooklist
 import fragment.FragmentRecent
 import fragment.FragmentDownloads
-import kotlinx.android.synthetic.main.fragment_home.*
-import android.support.annotation.IdRes
 import android.support.v4.widget.DrawerLayout
-import android.view.Menu
+import android.support.v7.app.ActionBarDrawerToggle
+import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.toast
 
-
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private var content: FrameLayout? = null
 
@@ -33,7 +31,7 @@ class MainActivity : AppCompatActivity(){
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
 
-//        This Part disables the Shifting in the BottomNavigation
+        //        This Part disables the Shifting in the BottomNavigation
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation)
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView)
 
@@ -44,7 +42,6 @@ class MainActivity : AppCompatActivity(){
 
                 val fragment = HomeFragment.Companion.newInstance()
                 addFragment(fragment)
-
 
 
 
@@ -84,8 +81,6 @@ class MainActivity : AppCompatActivity(){
     }
 
 
-
-
 //    The method to add, animate and change between Fragments:
 
     private fun addFragment(fragment: Fragment) {
@@ -98,15 +93,9 @@ class MainActivity : AppCompatActivity(){
     }
 
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
 
         val bottomNavigationView: BottomNavigationView
         bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation)
@@ -124,13 +113,18 @@ class MainActivity : AppCompatActivity(){
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
 
-
 //        SetActionBarSupport DOES NOT WORK IN FRAGMENTS??!?!?!
-        setSupportActionBar(findViewById(R.id.toolbar_main))
+//        setSupportActionBar(findViewById(R.id.toolbar_main))
 
         mDrawerLayout = findViewById(R.id.drawer_layout)
 
+        setSupportActionBar(findViewById(R.id.toolbar_main))
 
+        val toggle = ActionBarDrawerToggle(
+                this, drawer_layout, toolbar_main, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
+        nav_view.setNavigationItemSelectedListener(this)
 
     }
 
@@ -172,13 +166,6 @@ class MainActivity : AppCompatActivity(){
 
 
 
-//    val toggle = ActionBarDrawerToggle(
-//            this, drawer_layout, toolbar_main, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-//    drawer_layout.addDrawerListener(toggle)
-//    toggle.syncState()
-//
-//    nav_view.setNavigationItemSelectedListener(this)
-
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -189,52 +176,64 @@ class MainActivity : AppCompatActivity(){
     }
 
 
-//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//        // Handle navigation view item clicks here.
-//        when (item.itemId) {
-//            R.id.nav_camera -> {
-//                // Handle the camera action
-//            }
-//            R.id.nav_gallery -> {
-//
-//            }
-//            R.id.nav_slideshow -> {
-//
-//            }
-//            R.id.nav_manage -> {
-//
-//            }
-//            R.id.nav_share -> {
-//
-//            }
-//            R.id.nav_send -> {
-//
-//            }
-//        }
-//
-//        drawer_layout.closeDrawer(GravityCompat.START)
-//        return true
-//    }
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+
+        when (item.itemId) {
+            R.id.nav_manage_account -> {
+
+                toast("Manage Account Test Worked WOrked worKED")
 
 
+            }
+            R.id.nav_backup_restore -> {
+
+                toast("2 Test Worked")
 
 
+            }
+            R.id.nav_anime -> {
+
+                toast("3 Test Worked")
 
 
+            }
+            R.id.nav_manga -> {
+
+                toast("4 Test Worked")
 
 
+            }
+            R.id.nav_artworks -> {
+
+                toast("5 Test Worked")
 
 
+            }
+            R.id.nav_whats_new -> {
+
+                toast("6 Test Worked")
 
 
+            }
+            R.id.nav_feedback -> {
+
+                toast("7 Test Worked")
 
 
+            }
+            R.id.nav_about_us -> {
+
+                toast("8 Test Worked")
 
 
+            }
+        }
 
+        drawer_layout.closeDrawer(GravityCompat.START)
 
-
-
+        return true
+    }
 
 
 
