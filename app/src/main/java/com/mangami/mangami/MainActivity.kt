@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //
 ////    This adds items to the ActionBar
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+//        menuInflater.inflate(R.menu.menu_toolbar_home, menu)
 //        return true
 //    }
 //

@@ -8,15 +8,9 @@ import android.view.ViewGroup
 import com.mangami.mangami.*
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.toolbar_main.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MenuInflater
-import com.mangami.mangami.R.menu.menu_toolbar_main
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment() {
@@ -41,11 +35,10 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+//        ActionBar Support:
         setHasOptionsMenu(true)
-        (activity as AppCompatActivity).supportActionBar
 
-
-
+//        (activity as AppCompatActivity).supportActionBar
 
     }
 
@@ -55,6 +48,8 @@ class HomeFragment : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
+
+//        ViewPager and TabLayout for the Tabs
         firstViewPager = rootView.findViewById(R.id.view_pager_home)
 
         tabLayout = rootView.findViewById(R.id.tabs_home)
@@ -75,20 +70,17 @@ class HomeFragment : Fragment() {
     }
 
 
+//    This sets the Items in the Toolbar
+
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         super.onCreateOptionsMenu(menu, inflater)
 
-        inflater?.inflate(R.menu.menu_toolbar_main, menu)
+        inflater?.inflate(R.menu.menu_toolbar_home, menu)
     }
 
 
-    //    This is the OnClickListener for the Buttons in the ActionBar
+    //    This is the OnClickListener for the Buttons in the Toolbar
     override fun onOptionsItemSelected(item: MenuItem)= when (item.itemId) {
-        R.id.toolbar_edit -> {
-
-
-            true
-        }
 
         R.id.toolbar_search -> {
 

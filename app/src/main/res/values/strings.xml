@@ -14,12 +14,27 @@
     <string name="test">TestTextView</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
     <!--Navigation Drawer-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="drawer_manage_account">Manage Account</string>
+    <string name="drawer_backup_restore">Backup or Restore</string>
+
+    <string name="drawer_title_1">Mode</string>
+    <string name="drawer_anime">Anime</string>
+    <string name="drawer_manga">Manga</string>
+    <string name="drawer_artworks">Artworks</string>
+
+    <string name="drawer_title_2">General</string>
+    <string name="drawer_whatsnew">What\'s New</string>
+    <string name="drawer_feedback">Give us Feedback</string>
+    <string name="drawer_about_us">About us</string>
+
+
+
+
+
+
 
 </resources>

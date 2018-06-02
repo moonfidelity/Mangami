@@ -26,7 +26,7 @@
                 app:title="Home"
                 app:titleTextColor="@color/colorWhite"
 
-                app:menu="@menu/menu_toolbar_main"
+                app:menu="@menu/menu_toolbar_home"
                 />
 
 
