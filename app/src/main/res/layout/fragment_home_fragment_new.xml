@@ -9,12 +9,21 @@
     tools:context=".MainActivity"
     >
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/home_swipe_refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        app:srlPrimaryColor="@color/colorPrimaryDark"
+        app:srlAccentColor="@color/colorAccent"
         >
 
+        <com.scwang.smartrefresh.header.StoreHouseHeader
+            app:shhText="MANGAMI"
+            app:shhEnableFadeAnimation="true"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -78,6 +87,14 @@
 
         </android.support.v4.widget.NestedScrollView>
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_srlSpinnerStyle="FixedBehind"
+            app:layout_srlBackgroundColor="@color/colorPrimaryDark2"
+
+            />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </android.support.constraint.ConstraintLayout>

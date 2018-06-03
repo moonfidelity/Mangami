@@ -1,9 +1,11 @@
 package fragment
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
 import com.mangami.mangami.R
+import net.steamcrafted.materialiconlib.MaterialMenuInflater
 
 /**
  * Created by chirag on 31/7/17.

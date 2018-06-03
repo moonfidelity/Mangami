@@ -39,4 +39,17 @@ dependencies {
 
 //    This is for simple Toast Usage:
     implementation "org.jetbrains.anko:anko-common:0.8.3"
+
+//    More Icons: doesn't work properly, HOW TO IMPLEMENT?
+    implementation 'net.steamcrafted:materialiconlib:1.1.5'
+
+//    Game Refresh WORKS BUT I WANNA MANIPULATE IT
+    implementation 'org.faudroids.boredrudolf:boredrudolf:0.2.0'
+
+//    Ultra cool Refreshes
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-6'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-6'//没有使用特殊Header，可以不加这行
+
+
 }

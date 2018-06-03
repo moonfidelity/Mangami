@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
     <group
@@ -55,6 +56,18 @@
 
         </menu>
     </item>
+
+    <item android:title="@string/drawer_title_2">
+        <menu>
+            <item
+                android:id="@+id/test"
+                app:materialIcon="github_circle"
+
+                />
+
+        </menu>
+    </item>
+
 
 
 
