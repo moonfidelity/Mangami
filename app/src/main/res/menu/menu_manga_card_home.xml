@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/card_manga_download"
+
+        android:icon="@drawable/ic_file_download_white_24dp"
+        android:iconTint="@color/colorWhite"
+        android:title="Download"
+
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/card_manga_share"
+
+        app:materialIcon="share"
+        android:iconTint="@color/colorWhite"
+        android:title="Share"
+
+        app:showAsAction="never"
+
+        />
+
+    <item
+        android:id="@+id/card_manga_booklist"
+
+        android:icon="@drawable/ic_book_black_24dp"
+        android:iconTint="@color/colorWhite"
+        android:title="Add to Booklist"
+
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/card_manga_info"
+
+        app:materialIcon="information"
+        android:iconTint="@color/colorWhite"
+        android:title="More Info"
+
+        app:showAsAction="never"
+
+        />
+
+</menu>

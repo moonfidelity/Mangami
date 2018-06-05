@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
+        // Handle menu_bottom_navigation view item clicks here.
 
         when (item.itemId) {
             R.id.nav_manage_account -> {

@@ -7,10 +7,25 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 
+import android.graphics.Rect
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.util.TypedValue
+import android.widget.ImageView
+
+import com.bumptech.glide.Glide
+
+import kotlin.collections.MutableList
+import kotlin.collections.ArrayList
+import android.content.Context
 
 
 class HomeFragmentForYou : Fragment() {
 
+    private var recyclerView: RecyclerView? = null
+    private var adapter: AlbumsAdapter? = null
+    private var albumList: MutableList<Card_Manga>? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home_fragment_for_you, container, false)
@@ -19,4 +34,90 @@ class HomeFragmentForYou : Fragment() {
     }
 
 
+
+
+//    Stuff for Cards:
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        recyclerView = view?.findViewById<View>(R.id.recycler_view) as RecyclerView
+
+        albumList = ArrayList<Card_Manga>()
+        adapter = AlbumsAdapter(this, albumList!!)
+
+        val mLayoutManager = GridLayoutManager(context, 3)
+        recyclerView!!.layoutManager = mLayoutManager
+        recyclerView!!.addItemDecoration(GridSpacingItemDecoration(3, dpToPx(10), true))
+        recyclerView!!.itemAnimator = DefaultItemAnimator()
+        recyclerView!!.adapter = adapter
+
+        prepareAlbums()
+
+        try {
+            Glide.with(this).load(R.drawable.ic_dots_24dp).into(view?.findViewById(R.id.backdrop) as ImageView)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
+
+
+    /**
+     * Adding few albums for testing
+     */
+    private fun prepareAlbums() {
+        val covers = intArrayOf(R.drawable.ic_about_us__cake_black_24dp, R.drawable.ic_access_time_black_24dp, R.drawable.ic_account_black_24dp, R.drawable.ic_artworks_black_24dp)
+
+        var a = Card_Manga("Naruto", "Masashi Kishimoto", covers[0])
+        albumList!!.add(a)
+
+        a = Card_Manga("YuGiOh!", "Konami", covers[1])
+        albumList!!.add(a)
+
+        a = Card_Manga("Black Bullet", "3", covers[2])
+        albumList!!.add(a)
+
+        a = Card_Manga("Erased", "4", covers[3])
+        albumList!!.add(a)
+
+        adapter!!.notifyDataSetChanged()
+    }
+
+    /**
+     * RecyclerView item decoration - give equal margin around grid item
+     */
+    inner class GridSpacingItemDecoration(private val spanCount: Int, private val spacing: Int, private val includeEdge: Boolean) : RecyclerView.ItemDecoration() {
+
+        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State?) {
+            val position = parent.getChildAdapterPosition(view) // item position
+            val column = position % spanCount // item column
+
+            if (includeEdge) {
+                outRect.left = spacing - column * spacing / spanCount // spacing - column * ((1f / spanCount) * spacing)
+                outRect.right = (column + 1) * spacing / spanCount // (column + 1) * ((1f / spanCount) * spacing)
+
+                if (position < spanCount) { // top edge
+                    outRect.top = spacing
+                }
+                outRect.bottom = spacing // item bottom
+            } else {
+                outRect.left = column * spacing / spanCount // column * ((1f / spanCount) * spacing)
+                outRect.right = spacing - (column + 1) * spacing / spanCount // spacing - (column + 1) * ((1f /    spanCount) * spacing)
+                if (position >= spanCount) {
+                    outRect.top = spacing // item top
+                }
+            }
+        }
+    }
+
+    /**
+     * Converting dp to pixel
+     */
+    private fun dpToPx(dp: Int): Int {
+        val r = resources
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), r.displayMetrics))
+    }
 }
