@@ -1,6 +1,7 @@
 package com.mangami.mangami
 
 
+import android.content.ClipData
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.ViewGroup
@@ -19,76 +20,74 @@ import com.bumptech.glide.Glide
 import kotlin.collections.MutableList
 import kotlin.collections.ArrayList
 import android.content.Context
+import android.support.v7.widget.LinearLayoutManager
+import com.mangami.mangami.HomeFragmentForYou.GridSpacingItemDecoration
+import android.support.annotation.DimenRes
+import android.support.annotation.NonNull
+
+
+
+
+
+
 
 
 class HomeFragmentForYou : Fragment() {
 
-    private var recyclerView: RecyclerView? = null
-    private var adapter: AlbumsAdapter? = null
-    private var albumList: MutableList<Card_Manga>? = null
+    internal lateinit var lstBook: MutableList<Book>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_home_fragment_for_you, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_home_fragment_for_you, container, false)
 
-        return view
+
+
+
+        val recyclerView = rootView.findViewById(R.id.recyclerview_id) as RecyclerView
+
+        recyclerView.layoutManager = GridLayoutManager(activity, 3)
+
+
+        recyclerView.addItemDecoration(GridSpacingItemDecoration(3, dpToPx(5), true))
+        recyclerView.itemAnimator = DefaultItemAnimator()
+
+
+
+        val myAdapter = RecyclerViewAdapter(getActivity()!!.getApplicationContext(), lstBook)
+        recyclerView.adapter = myAdapter
+
+
+
+        return rootView
     }
-
 
 
 
 //    Stuff for Cards:
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        recyclerView = view?.findViewById<View>(R.id.recycler_view) as RecyclerView
-
-        albumList = ArrayList<Card_Manga>()
-        adapter = AlbumsAdapter(this, albumList!!)
-
-        val mLayoutManager = GridLayoutManager(context, 3)
-        recyclerView!!.layoutManager = mLayoutManager
-        recyclerView!!.addItemDecoration(GridSpacingItemDecoration(3, dpToPx(10), true))
-        recyclerView!!.itemAnimator = DefaultItemAnimator()
-        recyclerView!!.adapter = adapter
-
-        prepareAlbums()
-
-        try {
-            Glide.with(this).load(R.drawable.ic_dots_24dp).into(view?.findViewById(R.id.backdrop) as ImageView)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
+        lstBook = java.util.ArrayList()
+        lstBook.add(Book("Hero Academia", "Categorie Book", "Description book", R.drawable.thevigitarian))
+        lstBook.add(Book("Naruto", "Categorie Book", "Description book", R.drawable.thewildrobot))
+        lstBook.add(Book("Aventura", "Categorie Book", "Description book", R.drawable.mariasemples))
+        lstBook.add(Book("Mirai Nikki", "Categorie Book", "Description book", R.drawable.themartian))
+        lstBook.add(Book("Hero Academia", "Categorie Book", "Description book", R.drawable.thevigitarian))
+        lstBook.add(Book("Naruto", "Categorie Book", "Description book", R.drawable.thewildrobot))
+        lstBook.add(Book("Aventura", "Categorie Book", "Description book", R.drawable.mariasemples))
+        lstBook.add(Book("Mirai Nikki", "Categorie Book", "Description book", R.drawable.themartian))
+        lstBook.add(Book("Hero Academia", "Categorie Book", "Description book", R.drawable.thevigitarian))
+        lstBook.add(Book("Naruto", "Categorie Book", "Description book", R.drawable.thewildrobot))
+        lstBook.add(Book("Aventura", "Categorie Book", "Description book", R.drawable.mariasemples))
+        lstBook.add(Book("Mirai Nikki", "Categorie Book", "Description book", R.drawable.themartian))
     }
 
 
-    /**
-     * Adding few albums for testing
-     */
-    private fun prepareAlbums() {
-        val covers = intArrayOf(R.drawable.ic_about_us__cake_black_24dp, R.drawable.ic_access_time_black_24dp, R.drawable.ic_account_black_24dp, R.drawable.ic_artworks_black_24dp)
 
-        var a = Card_Manga("Naruto", "Masashi Kishimoto", covers[0])
-        albumList!!.add(a)
 
-        a = Card_Manga("YuGiOh!", "Konami", covers[1])
-        albumList!!.add(a)
 
-        a = Card_Manga("Black Bullet", "3", covers[2])
-        albumList!!.add(a)
 
-        a = Card_Manga("Erased", "4", covers[3])
-        albumList!!.add(a)
 
-        adapter!!.notifyDataSetChanged()
-    }
-
-    /**
-     * RecyclerView item decoration - give equal margin around grid item
-     */
     inner class GridSpacingItemDecoration(private val spanCount: Int, private val spacing: Int, private val includeEdge: Boolean) : RecyclerView.ItemDecoration() {
 
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State?) {
@@ -120,4 +119,7 @@ class HomeFragmentForYou : Fragment() {
         val r = resources
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), r.displayMetrics))
     }
+
+
+
 }

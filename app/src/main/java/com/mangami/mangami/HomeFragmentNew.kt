@@ -15,4 +15,11 @@ class HomeFragmentNew : Fragment() {
         return rootView
 
     }
+
+
+
+
+
+
+
 }

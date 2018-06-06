@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
-    android:id="@+id/cardview_manga"
+    android:id="@+id/cardview_id"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    cardview:cardCornerRadius="5dp"
-    cardview:cardElevation="4dp"
-
+    cardview:cardCornerRadius="1dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:backgroundTint="@color/colorPrimary"
     >
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/card_manga_image"
+            android:id="@+id/book_img_id"
             android:layout_width="120dp"
-            android:layout_height="160dp"
+            android:layout_height="170dp"
             android:background="@color/colorAccent"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary"
+            >
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="95dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@color/colorPrimary"
+                >
 
 
                 <TextView
-                    android:id="@+id/card_manga_title"
+                    android:id="@+id/book_title_id"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
 
@@ -48,7 +53,7 @@
                     android:paddingEnd="4dp"
                     android:paddingRight="4dp"
 
-                    android:text="Manga Title"
+                    android:text="Manga Title Title"
 
                     android:textColor="@color/colorWhite"
                     android:textSize="16sp"
@@ -71,6 +76,7 @@
                     android:textColor="#bcbcbc"
                     android:textSize="12sp"
                     android:textStyle="italic"
+                    android:layout_weight="0"
                     />
 
             </LinearLayout>
@@ -87,16 +93,13 @@
 
                 android:src="@drawable/ic_dots_24dp"
                 android:paddingBottom="4dp"
-                android:paddingRight="2dp"
-                android:paddingEnd="2dp"
-                android:paddingStart="2dp"
-                android:paddingLeft="2dp"
+                android:paddingRight="0dp"
+                android:paddingEnd="0dp"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
 
 
                 />
-
-
-
 
         </LinearLayout>
 

@@ -114,7 +114,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 //        SetActionBarSupport DOES NOT WORK IN FRAGMENTS??!?!?!
-//        setSupportActionBar(findViewById(R.id.toolbar_main))
 
         mDrawerLayout = findViewById(R.id.drawer_layout)
 
