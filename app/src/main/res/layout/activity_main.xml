@@ -30,11 +30,19 @@
                 android:fitsSystemWindows="true"
                 android:layout_gravity="top"
 
+
+                app:contentInsetStartWithNavigation="0dp"
                 app:title="Home"
                 app:titleTextColor="@color/colorWhite"
 
                 app:layout_scrollFlags="scroll|snap"
-                />
+                >
+
+
+
+
+
+            </android.support.v7.widget.Toolbar>
 
             <FrameLayout
                 android:id="@+id/content"
@@ -82,6 +90,10 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         app:itemIconTint="@color/colorPrimaryDark"
-        />
+
+        >
+
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

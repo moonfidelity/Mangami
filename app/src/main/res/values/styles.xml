@@ -10,10 +10,15 @@
     </style>
 
     <!-- To set the Drawer Icons color: -->
-
     <style name="DrawerHamburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
     </style>
-    
+
+
+
+
+
+
+
 </resources>

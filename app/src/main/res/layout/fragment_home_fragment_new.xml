@@ -87,12 +87,15 @@
 
         </android.support.v4.widget.NestedScrollView>
 
-        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+        <com.scwang.smartrefresh.layout.footer.FalsifyFooter
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_srlSpinnerStyle="FixedBehind"
-            app:layout_srlBackgroundColor="@color/colorPrimaryDark2"
 
+            app:layout_srlBackgroundColor="@color/colorPrimaryDark2"
+            app:srlAnimatingColor="@color/colorPrimaryDark2"
+            app:srlNormalColor="@color/colorPrimaryDark2"
+            app:srlClassicsSpinnerStyle="Scale"
             />
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>

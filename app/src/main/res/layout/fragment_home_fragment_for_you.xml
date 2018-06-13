@@ -16,10 +16,12 @@
 
         app:srlPrimaryColor="@color/colorPrimaryDark"
         app:srlAccentColor="@color/colorAccent"
+
         >
 
         <com.scwang.smartrefresh.header.StoreHouseHeader
-            app:shhText="MANGAMI"
+
+            app:shhText="Mangami"
             app:shhEnableFadeAnimation="true"
 
             android:layout_width="match_parent"
@@ -42,11 +44,15 @@
 
 
 
-        <com.scwang.smartrefresh.layout.footer.BallPulseFooter
+        <com.scwang.smartrefresh.layout.footer.FalsifyFooter
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_srlSpinnerStyle="FixedBehind"
+
             app:layout_srlBackgroundColor="@color/colorPrimaryDark2"
+            app:srlAnimatingColor="@color/colorPrimaryDark2"
+            app:srlNormalColor="@color/colorPrimaryDark2"
+            app:srlClassicsSpinnerStyle="Scale"
 
             />
 

@@ -5,71 +5,67 @@
     tools:showIn="navigation_view">
 
     <group
-        android:checkableBehavior="none"
+        android:checkableBehavior="single"
         >
         <item
+            android:checkable="true"
             android:id="@+id/nav_manage_account"
             android:icon="@drawable/ic_account_black_24dp"
             android:title="@string/drawer_manage_account" />
         <item
+            android:checkable="true"
             android:id="@+id/nav_backup_restore"
             android:icon="@drawable/ic_backup_black_24dp"
             android:title="@string/drawer_backup_restore" />
 
+
+        <item
+            android:title="@string/drawer_title_1"
+            >
+            <menu>
+                <item
+                    android:checkable="true"
+                    android:id="@+id/nav_anime"
+                    android:icon="@drawable/ic_anime_black_24dp"
+                    android:title="@string/drawer_anime" />
+                <item
+                    android:checkable="true"
+                    android:id="@+id/nav_manga"
+                    android:icon="@drawable/ic_manga_black_24dp"
+                    android:title="@string/drawer_manga" />
+                <item
+                    android:checkable="true"
+                    android:id="@+id/nav_artworks"
+                    android:icon="@drawable/ic_artworks_black_24dp"
+                    android:title="@string/drawer_artworks" />
+            </menu>
+        </item>
+
+
+        <item android:title="@string/drawer_title_2">
+            <menu>
+                <item
+                    android:checkable="true"
+                    android:id="@+id/nav_whats_new"
+                    android:icon="@drawable/ic_whats_new_black_24dp"
+                    android:title="@string/drawer_whatsnew" />
+                <item
+                    android:checkable="true"
+                    android:id="@+id/nav_feedback"
+                    android:icon="@drawable/ic_feedback_black_24dp"
+                    android:title="@string/drawer_feedback" />
+                <item
+                    android:checkable="true"
+                    android:id="@+id/nav_about_us"
+                    android:icon="@drawable/ic_about_us__cake_black_24dp"
+                    android:title="@string/drawer_about_us" />
+
+            </menu>
+        </item>
+
+
+
+
+
     </group>
-
-
-    <item
-        android:title="@string/drawer_title_1"
-        >
-        <menu>
-            <item
-                android:id="@+id/nav_anime"
-                android:icon="@drawable/ic_anime_black_24dp"
-                android:title="@string/drawer_anime" />
-            <item
-                android:id="@+id/nav_manga"
-                android:icon="@drawable/ic_manga_black_24dp"
-                android:title="@string/drawer_manga" />
-            <item
-                android:id="@+id/nav_artworks"
-                android:icon="@drawable/ic_artworks_black_24dp"
-                android:title="@string/drawer_artworks" />
-        </menu>
-    </item>
-
-
-    <item android:title="@string/drawer_title_2">
-        <menu>
-            <item
-                android:id="@+id/nav_whats_new"
-                android:icon="@drawable/ic_whats_new_black_24dp"
-                android:title="@string/drawer_whatsnew" />
-            <item
-                android:id="@+id/nav_feedback"
-                android:icon="@drawable/ic_feedback_black_24dp"
-                android:title="@string/drawer_feedback" />
-            <item
-                android:id="@+id/nav_about_us"
-                android:icon="@drawable/ic_about_us__cake_black_24dp"
-                android:title="@string/drawer_about_us" />
-
-        </menu>
-    </item>
-
-    <item android:title="@string/drawer_title_2">
-        <menu>
-            <item
-                android:id="@+id/test"
-                app:materialIcon="github_circle"
-
-                />
-
-        </menu>
-    </item>
-
-
-
-
-
 </menu>

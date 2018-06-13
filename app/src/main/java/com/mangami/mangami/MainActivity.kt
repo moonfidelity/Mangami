@@ -16,8 +16,18 @@ import fragment.FragmentRecent
 import fragment.FragmentDownloads
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
+import android.view.View
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.toast
+import android.widget.RadioButton
+import com.mangami.mangami.R.mipmap.ic_launcher
+import android.widget.ImageButton
+
+
+
+
+
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -119,10 +129,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(findViewById(R.id.toolbar_main))
 
+
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setIcon(R.drawable.toolbar_logo)
+
+
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar_main, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
+
+        for (i in 0 until toolbar_main.getChildCount()) {
+            if (toolbar_main.getChildAt(i) is ImageButton) {
+                val imageButton = toolbar_main.getChildAt(i) as ImageButton
+                imageButton.setPadding(16, 100, 0, 100)
+            }
+        }
+
+
         nav_view.setNavigationItemSelectedListener(this)
 
     }
@@ -233,8 +257,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         return true
     }
-
-
 
 
 }
