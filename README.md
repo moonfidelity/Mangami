@@ -1,2 +1,2 @@
 # Mangami
-Manga Reader App.
+Old project, Manga Reader App.
